@@ -54,20 +54,16 @@ function loadEventListeners() {
       }
     });
   });
+  document.addEventListener('DOMContentLoaded',evt => {
+    const allTasks = storageOperations.getAllTaskFromLocalStorage(taskListKey);
+    // console.log(allTasks);
+    if (allTasks !== null) {
+      allTasks.forEach((task) => {
+        // console.log("task retrieved from LS while loading ", task);
+        domOperations.appendToTaskList(task, false, ulCollection);
+      });
+    }
+  });
 }
 
-
-function loadSavedTaskList() {
-  const allTasks = storageOperations.getAllTaskFromLocalStorage(taskListKey);
-  // console.log(allTasks);
-  if (allTasks !== null) {
-    allTasks.forEach((task) => {
-      // console.log("task retrieved from LS while loading ", task);
-      domOperations.appendToTaskList(task, false, ulCollection);
-    });
-  }
-}
-
-
-loadSavedTaskList();
 loadEventListeners();
