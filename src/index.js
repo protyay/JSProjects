@@ -54,7 +54,7 @@ function loadEventListeners() {
       }
     });
   });
-  document.addEventListener('DOMContentLoaded',evt => {
+  document.addEventListener('DOMContentLoaded', () => {
     const allTasks = storageOperations.getAllTaskFromLocalStorage(taskListKey);
     // console.log(allTasks);
     if (allTasks !== null) {
