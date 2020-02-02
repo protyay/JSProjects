@@ -45,10 +45,3 @@ loanFormSubmitBtn.addEventListener('click', (evt) => {
 });
 
 
-/*
-loanFormSubmitBtn.addEventListener('click', (evt) => {
-  evt.preventDefault();
-  console.log('CLicked');
-  console.log(`Values are ${principalLoanAmt.value} and interest rate ${interestRate.value}`);
-})
-*/

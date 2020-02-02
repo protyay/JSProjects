@@ -14,7 +14,7 @@ const domOperations = {
     const td = document.createElement('td');
 
 
-    td.setAttribute("scope","row");
+    td.setAttribute('scope', 'row');
     td.classList.add('text-info');
     return td;
   },
