@@ -6,16 +6,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	
 	<title>Loan Calculator</title>
+	<style>
+		#preloader, #result {
+			display: none;
+		}
+	</style>
 </head>
 <body class="bg-dark">
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 mx-auto">
-			<div class="card card-body text-center mt-5">
+			<div class="card card-body text-center mt-5" id="main">
 				<h1 class="heading display-5 pb-3">
 					Loan Calculator
 				</h1>
@@ -60,6 +66,13 @@
 							       class="btn btn-dark btn-block">
 						</div>
 					</div>
+					<!--Preloader to improve User experience -->
+					<div class="d-flex justify-content-center">
+						<div class="spinner-grow text-primary" role="status" id="preloader">
+							<span class="sr-only">Loading...</span>
+						</div>
+					</div>
+					
 					
 					<div id="result">
 						<h2 class="text-center text-success px-4 font-weight-light">
@@ -78,11 +91,12 @@
 								<!--<td scope="row" class="text-info"></td>
 								<td scope="row" class="text-info"></td>
 								<td scope="row" class="text-info"></td>-->
-							</tr>
-							</tbody>
-						
-						</table>
-					</div>
+					</tr>
+					</tbody>
+					
+					</table>
+				</form>
+			</div>
 				
 				</form>
 			

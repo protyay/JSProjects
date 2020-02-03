@@ -24,6 +24,7 @@ loanFormSubmitBtn.addEventListener('click', (evt) => {
   evt.preventDefault();
   if (interestRate.value === '' || repaymentMonths.value === '' || principalLoanAmt.value === '') {
     console.log('Please enter all Values to calculate ');
+    domOperations.showErrorMessage('Please enter all values to calculate');
   } else {
     // We have all the values to calculate
     const monthlyPayment = interestCalculator.getMonthlyPayment(repaymentMonths.value,
@@ -37,11 +38,14 @@ loanFormSubmitBtn.addEventListener('click', (evt) => {
     const totalInterestPayment = interestCalculator.getTotalInterestPaid(repaymentMonths.value,
       principalLoanAmt.value, interestRate.value);
     console.log(totalInterestPayment);
-
-    domOperations.createTableBodyData(monthlyPayment, totalPayment, totalInterestPayment,
+    domOperations.showLoaderDiv();
+    const timeoutFn = () => domOperations.createTableBodyData(monthlyPayment, totalPayment,
+      totalInterestPayment,
       resultTableBody);
+    setTimeout(timeoutFn, 1490);
     // resultDiv.style.display = 'block';
+    interestRate.value = '';
+    repaymentMonths.value = '';
+    principalLoanAmt.value = '';
   }
 });
-
-
