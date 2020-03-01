@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+	      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+	<title>BookList App</title>
+</head>
+<body class="bg-dark">
+<div class="row">
+	<div class="col-md-6 mx-auto">
+		<div class="card card-body text-center mt-5" id="main">
+			<h1 class="heading display-5 pb-3 h1">
+				BookList App
+			</h1>
+			
+			<form id="loan-form">
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+                            <span class="input-group-text">
+                            1
+                        </span>
+						</div>
+						<input type="text" class="form-control" id="book-name" placeholder="Book Name">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+                            <span class="input-group-text">
+                            2
+                        </span>
+						</div>
+						<input type="text" class="form-control" id="book-author" placeholder="Author">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+                            <span class="input-group-text">
+                            3
+                        </span>
+						</div>
+						<input type="text" class="form-control" id="book-isbn" placeholder="ISBN">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<input type="submit" id="book-form-submit" value="Add Book"
+						       class="btn btn-dark btn-block">
+					</div>
+				</div>
+				<div id="result">
+					<h2 class="text-center text-success px-4 font-weight-light">
+						Results
+					</h2>
+					<table class="table table-bordered table-sm" id="result-table">
+						<thead class="thead-light">
+						<tr>
+							<th scope="col">Book Name</th>
+							<th scope="col">Author</th>
+							<th scope="col">ISBN</th>
+						</tr>
+						</thead>
+						<tbody id="result-body">
+						</tbody>
+					
+					</table>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>
