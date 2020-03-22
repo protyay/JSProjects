@@ -3,17 +3,20 @@ const userNameInpField = document.getElementById('input-username');
 userNameInpField.addEventListener('keyup', (ev) => {
   const userName = ev.target.value;
   console.log(`Entered text is ${userName}`);
-  // eslint-disable-next-line no-undef
   const gitHubAccess = new GithubAccess();
   // const gitHubFinderUI = new GitHubFinderUI();
 
   if (userName !== '') {
+    // This is using the fetch API
     gitHubAccess.getUser(userName);
-    // eslint-disable-next-line brace-style
-  }
-  // eslint-disable-next-line no-empty
-  else {
-    // eslint-disable-next-line no-undef
+    const userRepos = gitHubAccess.getUserRepos(userName);
+    userRepos
+      .then((data) => {
+        console.log(data.repoJsonResponse);
+        GitHubFinderUI.displayUserRepos(data.repoJsonResponse);
+      })
+      .catch((error) => console.log(error));
+  } else {
     const profileDiv = document.getElementById('profile');
     profileDiv.innerHTML = '';
     if (document.querySelector('div.alert-heading') !== null) {

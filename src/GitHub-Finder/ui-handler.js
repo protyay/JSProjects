@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 class GitHubFinderUI {
   static showProfile(userProfile) {
     console.log(userProfile);
@@ -45,5 +44,26 @@ class GitHubFinderUI {
       warningMsgDiv.innerText = errorMsg;
       searchUserDiv.appendChild(warningMsgDiv);
     }
+  }
+
+  static displayUserRepos(reposData) {
+    const reposDiv = document.querySelector('#repos');
+    reposDiv.innerHTML = '';
+    reposData.forEach((repo) => {
+      reposDiv.innerHTML += `
+           <div class="card card-body">
+                <div class="row">
+                   <div class="col-md-6">
+                       <a href="${repo.html_url}">${repo.name}</a>
+                   </div>
+                  <div class="col-md-6">
+                            <span class="badge badge-success">Stars : ${repo.stargazers_count}</span>
+                            <span class="badge badge-info">Forks Count: ${repo.forks}</span>
+                            <span class="badge badge-warning">Created at: ${repo.created_at}</span>         
+                  </div>
+                </div>
+           </div>
+    `;
+    });
   }
 }
